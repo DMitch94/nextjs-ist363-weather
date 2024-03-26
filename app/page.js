@@ -31,7 +31,7 @@ const Homepage = () => {
       {count > 5 && <div>Count is greater than 5</div>}
 
       <br />
-      <button>Show message</button>
+      <button>{isVisible ? "Hide Message" : "Show message"}</button>
       {isVisible && <p>Hello, world!</p>}
     </div>
   );
