@@ -8,12 +8,20 @@ const Homepage = () => {
     <div>
       <h1>Weather app</h1>
       <h2>Count: {count}</h2>
-      <button 
+      <button
         onclick={() => {
           setCount(count + 1);
         }}
-        >
+      >
         Increment
+      </button>
+      <button
+        onclick={() => {
+          setCount(count - 1);
+        }}
+      >
+        Decrement
+      </button>
       <Button label="Download" />
       <Button label="Register now" />
       <Button label="Learn more" />
