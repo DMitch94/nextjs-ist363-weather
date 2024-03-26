@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Button from "../components/Button";
+import ColorPicker from "../components/ColorPicker";
 
 const Homepage = () => {
   const [count, setCount] = useState(0);
@@ -10,20 +11,18 @@ const Homepage = () => {
     <div>
       <h1>Weather app</h1>
       <h2>Count: {count}</h2>
-      <button
-        onclick={() => {
+      <Button
+        label="Increment"
+        clickHandler={() => {
           setCount(count + 1);
         }}
-      >
-        Increment
-      </button>
-      <button
-        onclick={() => {
+      />
+      <Button
+        label="Decrement"
+        clickHandler={() => {
           setCount(count - 1);
         }}
-      >
-        Decrement
-      </button>
+      />
       <Button label="Download" />
       <Button label="Register now" />
       <Button label="Learn more" />
@@ -31,8 +30,15 @@ const Homepage = () => {
       {count > 5 && <div>Count is greater than 5</div>}
 
       <br />
-      <button>{isVisible ? "Hide Message" : "Show message"}</button>
+      <Button
+        label={isVisible ? "Hide Message" : "Show message"}
+        clickHandler={() => {
+          setIsVisible(!isVisible);
+        }}
+      />
       {isVisible && <p>Hello, world!</p>}
+
+      <ColorPicker />
     </div>
   );
 };
