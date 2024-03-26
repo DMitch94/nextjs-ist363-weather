@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 import Button from "../components/Button";
+
 const Homepage = () => {
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState();
 
   return (
     <div>
@@ -25,6 +27,12 @@ const Homepage = () => {
       <Button label="Download" />
       <Button label="Register now" />
       <Button label="Learn more" />
+
+      {count > 5 && <div>Count is greater than 5</div>}
+
+      <br />
+      <button>Show message</button>
+      {isVisible && <p>Hello, world!</p>}
     </div>
   );
 };
