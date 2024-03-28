@@ -6,7 +6,7 @@ import ColorPicker from "../components/ColorPicker";
 
 const Homepage = () => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState();
+  const [isVisible, setIsVisible] = useState(False);
 
   return (
     <div>
