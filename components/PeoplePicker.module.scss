@@ -1,0 +1,22 @@
+.card {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 1rem;
+  max-width: 400px;
+  text-align: center;
+  font-family: Arial;
+  &__headshot {
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &__job {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
