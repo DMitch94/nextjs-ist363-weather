@@ -12,8 +12,13 @@ const PeoplePicker = ({ people }) => {
     <section>
       <h2>Team</h2>
       <div className={styles.card__container}>
-        <ButtonUI />
-        <ButtonUI />
+        <ButtonUI
+          icon={"prev"}
+          clickHandler={() => {
+            setActivePersonIndex();
+          }}
+        />
+        <ButtonUI icon={"next"} />
         <div className={styles.card}>
           <Image
             src={`/headshots/${people[activePersonIndex].slug}.jpg`}

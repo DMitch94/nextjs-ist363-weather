@@ -1,4 +1,4 @@
-const ButtonUI = () => {
-  return <button>UI Icon</button>;
+const ButtonUI = ({ icon }) => {
+  return <button>{icon}</button>;
 };
 export default ButtonUI;
