@@ -13,6 +13,7 @@ const PeoplePicker = ({ people }) => {
       <h2>Team</h2>
       <div className={styles.card__container}>
         <ButtonUI
+          className={styles.card__arrow__left}
           icon="faAngleLeft"
           clickHandler={() => {
             const newIndex =
@@ -23,6 +24,7 @@ const PeoplePicker = ({ people }) => {
           }}
         />
         <ButtonUI
+          className={styles.card__arrow__right}
           icon="faAngleRight"
           clickHandler={() => {
             const newIndex =

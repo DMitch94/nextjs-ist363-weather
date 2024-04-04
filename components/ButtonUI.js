@@ -6,10 +6,10 @@ const icons = {
   faAngleRight: faAngleRight,
 };
 
-const ButtonUI = ({ clickHandler, icon }) => {
+const ButtonUI = ({ className, clickHandler, icon }) => {
   const matchingIcon = icons[icon];
   return (
-    <button onClick={clickHandler}>
+    <button className={className} onClick={clickHandler}>
       <FontAwesomeIcon icon={matchingIcon} />
     </button>
   );
