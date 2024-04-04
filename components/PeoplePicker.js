@@ -13,17 +13,30 @@ const PeoplePicker = ({ people }) => {
       <h2>Team</h2>
       <div className={styles.card__container}>
         <ButtonUI
-          icon={"prev"}
+          icon="faAngleLeft"
           clickHandler={() => {
-            setActivePersonIndex();
+            const newIndex =
+              activePersonIndex <= 0
+                ? people.length - 1
+                : activePersonIndex - 1;
+            setActivePersonIndex(newIndex);
           }}
         />
-        <ButtonUI icon={"next"} />
+        <ButtonUI
+          icon="faAngleRight"
+          clickHandler={() => {
+            const newIndex =
+              activePersonIndex >= people.length - 1
+                ? 0
+                : activePersonIndex + 1;
+            setActivePersonIndex(newIndex);
+          }}
+        />
         <div className={styles.card}>
           <Image
             src={`/headshots/${people[activePersonIndex].slug}.jpg`}
             alt={`${people[activePersonIndex].name.first}${" "}
-                ${people[activePersonIndex].name.last}`}
+            ${people[activePersonIndex].name.last}`}
             width={200}
             height={200}
             className={styles.card__headshot}
