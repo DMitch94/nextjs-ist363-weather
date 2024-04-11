@@ -7,6 +7,7 @@ import Image from "next/image";
 import ButtonDemo from "../components/ButtonDemo";
 import ColorPicker from "../components/ColorPicker";
 import PeoplePicker from "../components/PeoplePicker";
+import Tabs from "../components/Tabs";
 
 import {
   getGeoLocation,
@@ -19,7 +20,7 @@ const Homepage = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [daysOfWeek, setdaysOFWeek] = useState([]);
+  const [daysOfWeek, setdaysOFWeek] = useState(null);
   const [activeDayIndex, setActiveDayIndex] = useState(0);
 
   const peopleArr = getPeople();
@@ -85,13 +86,13 @@ const Homepage = () => {
   <ColorPicker />*/}
       {daysOfWeek && (
         <section>
-          <ul>
-            {daysOfWeek?.map((day, index) => {
-              return <li key={index}>{day}</li>;
-            })}
-          </ul>
+          <Tabs
+            activeIndex={activeDayIndex}
+            items={daysOfWeek}
+            clickHandler={setActiveDayIndex}
+          />
           <div>
-            {weatherData.list
+            {weatherData?.list
               .filter((block) => {
                 const date = new Date(block.dt * 1000);
                 const options = { weekday: "short" };
@@ -101,6 +102,7 @@ const Homepage = () => {
               .map((block, index) => {
                 return <p key={index}>{block.main.temp}</p>;
               })}
+            ;
           </div>
         </section>
       )}
