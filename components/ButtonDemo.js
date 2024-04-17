@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "../components/Button";
+import Button from "./Button";
 
 const ButtonDemo = () => {
   const [count, setCount] = useState(0);
