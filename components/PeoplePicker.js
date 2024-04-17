@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ButtonUI from "./ButtonUI.js";
+import ButtonUI from "./ButtonUI";
 import Image from "next/image";
 
 import styles from "./PeoplePicker.module.scss";
