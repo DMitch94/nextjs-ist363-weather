@@ -8,7 +8,7 @@
     width: 700px;
   }
   @include mixins.breakpoint(md) {
-    width: 900px;
+    width: 980px;
   }
   @include mixins.breakpoint(lg) {
     width: 1140px;
