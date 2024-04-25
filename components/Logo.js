@@ -1,15 +1,21 @@
 import Image from "next/image";
 
+import Row from "./Row";
+
+import styles from "./Row.module.scss";
+
 const Logo = () => {
   return (
-    <div>
+    <Row alignItems="center">
       <Image
         src="/logo-weather.svg"
         alt="Weather logo"
-        width={100}
-        height={100}
+        width={162.1}
+        height={148.5}
+        className={styles.branding__logo}
       />
-    </div>
+      <h1 className={styles.branding__wordmark}>IST 363 Weather App</h1>
+    </Row>
   );
 };
 export default Logo;
